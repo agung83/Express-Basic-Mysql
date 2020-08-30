@@ -1,0 +1,35 @@
+{{!< layout }}
+
+
+<div class="card-body">
+    <form action="/Update" method="POST">
+
+        <div class="form-group">
+            <label for="">Nama Admin</label>
+            <input type="hidden" name="id" value="{{ dataEdit.admin_id }}">
+            <input type="text" name="nama" value="{{ dataEdit.admin_nama }}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Username</label>
+            <input type="text" name="username" value="{{ dataEdit.admin_username }}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Password</label>
+            <input type="text" name="password" value="{{ dataEdit.admin_password }}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">email</label>
+            <input type="text" name="email" value="{{ dataEdit.admin_email }}" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Hobi</label>
+            <input type="text" name="hobi" value="{{ dataEdit.admin_foto }}" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-success">Update Data</button>
+        <a href="/" class="btn btn-primary"> Back </a>
+    </form>
+</div>
