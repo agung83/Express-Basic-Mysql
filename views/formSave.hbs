@@ -1,7 +1,11 @@
 {{!< layout}}
 
 
-
+{{#if message}}
+<div class="alert {{messageClass}}" role="alert">
+    {{message}}
+</div>
+{{/if}}
 <div class="card-body">
     <form action="/saveData" method="POST">
 

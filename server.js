@@ -5,7 +5,8 @@ const path = require('path')
 const app = express()
 const port = 8000
 const mysql = require('mysql');
-const controllers = require('./controllers/index.controllers');
+// const controllers = require('./controllers/index.controllers');
+const indexRoutes = require('./routes/index.routes');
 
 
 const db = mysql.createConnection({
@@ -38,20 +39,10 @@ app.set('view engine', 'hbs')
 app.use(express.static('public'))
 
 
+app.use('/', indexRoutes);
 
 
 
-app.get('/', controllers.getAll);
-
-app.get('/formSave', controllers.formSave);
-
-app.post('/saveData', controllers.actionSave);
-
-app.get('/delete/:id', controllers.delete);
-
-app.get('/edit/:id', controllers.formUpdate);
-
-app.post('/Update', controllers.actionUpdate);
 
 
 

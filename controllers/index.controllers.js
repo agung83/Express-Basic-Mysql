@@ -24,11 +24,15 @@ const aksiSimpan = (req, res) => {
 
     let query = "INSERT INTO `tbl_admin` (admin_nama, admin_username, admin_password, admin_email, admin_foto) VALUES ('" + nama + "','" + usernama + "','" + password + "','" + email + "','" + hobi + "')";
     db.query(query, (err, result) => {
-        console.log(err)
-        res.render('formSave', {
-            message: 'berhasil disimpan',
-            messageClass: 'alert-info'
-        });
+        try {
+            res.render('formSave', {
+                message: 'berhasil disimpan',
+                messageClass: 'alert-info'
+            });
+
+        } catch (error) {
+            console.log(err)
+        }
 
 
     });
